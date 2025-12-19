@@ -2,6 +2,7 @@ import React from 'react';
 import {MapPin, ArrowRight, Clock, MessageCircle} from 'lucide-react';
 import Button from '../components/ui/Button';
 import SectionTitle from '../components/ui/SectionTitle';
+import {contactInfo} from '../data/contact';
 
 const ContactPage = () => (
     <div className="pt-32 pb-20 px-4 animate-in fade-in duration-500">
@@ -17,8 +18,8 @@ const ContactPage = () => (
                         </div>
                         <div>
                             <h4 className="text-white font-bold uppercase mb-1">Ubicación</h4>
-                            <p className="text-gray-400 text-sm mb-2">Jujuy, Argentina</p>
-                            <a href="https://maps.app.goo.gl/Ka7gzCmSXZfUFPPp7" target="_blank" className="text-[#FFD700] text-sm hover:underline font-bold flex items-center gap-1">
+                            <p className="text-gray-400 text-sm mb-2">{contactInfo.address}</p>
+                            <a href={contactInfo.mapLink} target="_blank" className="text-[#FFD700] text-sm hover:underline font-bold flex items-center gap-1">
                                 Ver en Mapa <ArrowRight size={14} />
                             </a>
                         </div>
@@ -31,9 +32,12 @@ const ContactPage = () => (
                         <div>
                             <h4 className="text-white font-bold uppercase mb-1">Horarios</h4>
                             <div className="text-gray-400 text-sm space-y-1">
-                                <div className="flex justify-between w-48"><span>Lunes - Viernes:</span> <span className="text-white">07:00 - 23:00</span></div>
-                                <div className="flex justify-between w-48"><span>Sábados:</span> <span className="text-white">09:00 - 20:00</span></div>
-                                <div className="flex justify-between w-48"><span>Domingos:</span> <span className="text-red-400">Cerrado</span></div>
+                                {contactInfo.hours.map((item, idx) => (
+                                    <div key={idx} className="flex justify-between w-48">
+                                        <span>{item.label}:</span>
+                                        <span className={item.active ? "text-white" : "text-red-400"}>{item.time}</span>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -45,7 +49,7 @@ const ContactPage = () => (
                         <div>
                             <h4 className="text-white font-bold uppercase mb-1">WhatsApp</h4>
                             <p className="text-gray-400 text-sm mb-2">Consulta precios y planes al instante.</p>
-                            <Button href="https://wa.me/5493881234567" variant="ghost" className="!p-0 !h-auto !text-[#FFD700] hover:!bg-transparent hover:underline !justify-start">
+                            <Button href={`https://wa.me/${contactInfo.whatsapp}`} variant="ghost" className="!p-0 !h-auto !text-[#FFD700] hover:!bg-transparent hover:underline !justify-start">
                                 Enviar Mensaje
                             </Button>
                         </div>

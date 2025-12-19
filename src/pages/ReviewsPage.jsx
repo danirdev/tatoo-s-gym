@@ -2,15 +2,10 @@ import React from 'react';
 import {Quote, Star} from 'lucide-react';
 import Button from '../components/ui/Button';
 import SectionTitle from '../components/ui/SectionTitle';
+import {reviews} from '../data/reviews';
 
 const ReviewsPage = () =>
 {
-    const reviews = [
-        {name: "Juan Pérez", role: "Socio desde 2023", text: "El mejor gimnasio de la zona. Las máquinas están impecables y el ambiente te motiva a no faltar nunca."},
-        {name: "María González", role: "Competidora Fitness", text: "Encontré en Tatto's Gym el equipamiento profesional que necesitaba para mi preparación. Excelente atención."},
-        {name: "Carlos Ruiz", role: "Socio Fundador", text: "Más que un gym, es una familia. Los profes siempre están atentos para corregirte y ayudarte a mejorar."},
-    ];
-
     return (
         <div className="pt-32 pb-20 px-4 animate-in slide-in-from-right-4 duration-500">
             <div className="max-w-7xl mx-auto">

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Menu, X, Dumbbell, MessageCircle} from 'lucide-react';
 import Button from '../ui/Button';
+import {navLinks} from '../../data/navigation';
 
 const Navbar = ({activePage, setActivePage}) =>
 {
@@ -19,15 +20,6 @@ const Navbar = ({activePage, setActivePage}) =>
         window.scrollTo(0, 0);
         setIsMenuOpen(false);
     }, [activePage]);
-
-    const navLinks = [
-        {id: 'home', label: 'Inicio'},
-        {id: 'about', label: 'Historia'},
-        {id: 'plans', label: 'Membresías'},
-        {id: 'gallery', label: 'Galería'},
-        {id: 'reviews', label: 'Reseñas'},
-        {id: 'contact', label: 'Contacto'},
-    ];
 
     return (
         <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/95 shadow-lg border-b border-white/10' : 'bg-transparent'}`}>

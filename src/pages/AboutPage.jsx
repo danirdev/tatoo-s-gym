@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionTitle from '../components/ui/SectionTitle';
+import {team} from '../data/team';
 
 const AboutPage = () => (
     <div className="pt-32 pb-20 px-4 animate-in slide-in-from-bottom-4 duration-500">
@@ -37,11 +38,7 @@ const AboutPage = () => (
             <div className="mt-20">
                 <SectionTitle title="Nuestro Equipo" subtitle="Profesionales a tu servicio" />
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {[
-                        {name: "Tatto", role: "Dueño & Head Coach", img: "https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=1887&auto=format&fit=crop"},
-                        {name: "Laura", role: "Especialista en Funcional", img: "https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?q=80&w=1887&auto=format&fit=crop"},
-                        {name: "Marcos", role: "Instructor de Musculación", img: "https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?q=80&w=1887&auto=format&fit=crop"}
-                    ].map((member, idx) => (
+                    {team.map((member, idx) => (
                         <div key={idx} className="group relative overflow-hidden rounded-xl bg-neutral-800">
                             <div className="aspect-[3/4] overflow-hidden">
                                 <img src={member.img} alt={member.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 grayscale group-hover:grayscale-0" />

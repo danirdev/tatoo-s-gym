@@ -1,17 +1,9 @@
 import React from 'react';
 import {Dumbbell, Instagram, MessageCircle} from 'lucide-react';
+import {navLinks} from '../../data/navigation';
 
 const Footer = ({setActivePage}) =>
 {
-    const navLinks = [
-        {id: 'home', label: 'Inicio'},
-        {id: 'about', label: 'Historia'},
-        {id: 'plans', label: 'Membresías'},
-        {id: 'gallery', label: 'Galería'},
-        {id: 'reviews', label: 'Reseñas'},
-        {id: 'contact', label: 'Contacto'},
-    ];
-
     return (
         <footer className="bg-black border-t border-neutral-900 pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4">

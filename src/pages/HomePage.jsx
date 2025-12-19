@@ -1,6 +1,6 @@
 import React from 'react';
-import {Dumbbell, Star, Clock} from 'lucide-react';
 import Button from '../components/ui/Button';
+import {features} from '../data/features';
 
 const HomePage = ({navigate}) => (
     <div className="animate-in fade-in duration-500">
@@ -43,11 +43,7 @@ const HomePage = ({navigate}) => (
         {/* FEATURES */}
         <section className="bg-neutral-900 py-20 px-4">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                    {icon: Dumbbell, title: "Equipamiento Pro", text: "Maquinaria de última generación para biomecánica perfecta."},
-                    {icon: Star, title: "Ambiente Único", text: "Energía positiva y comunidad que te impulsa a mejorar."},
-                    {icon: Clock, title: "Horarios Amplios", text: "Entrena a tu ritmo, desde temprano hasta la noche."}
-                ].map((feature, idx) => (
+                {features.map((feature, idx) => (
                     <div key={idx} className="bg-neutral-800/50 p-8 rounded-2xl border border-neutral-700 hover:border-[#FFD700] transition-colors group">
                         <feature.icon className="w-12 h-12 text-[#FFD700] mb-6 group-hover:scale-110 transition-transform" />
                         <h3 className="text-xl font-bold text-white uppercase mb-3">{feature.title}</h3>
