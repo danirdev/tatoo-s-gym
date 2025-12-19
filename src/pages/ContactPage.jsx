@@ -49,7 +49,7 @@ const ContactPage = () => (
                         <div>
                             <h4 className="text-white font-bold uppercase mb-1">WhatsApp</h4>
                             <p className="text-gray-400 text-sm mb-2">Consulta precios y planes al instante.</p>
-                            <Button href={`https://wa.me/${contactInfo.whatsapp}`} variant="ghost" className="!p-0 !h-auto !text-[#FFD700] hover:!bg-transparent hover:underline !justify-start">
+                            <Button href={`https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent(import.meta.env.VITE_WHATSAPP_DEFAULT_MESSAGE)}`} variant="ghost" className="!p-0 !h-auto !text-[#FFD700] hover:!bg-transparent hover:underline !justify-start">
                                 Enviar Mensaje
                             </Button>
                         </div>

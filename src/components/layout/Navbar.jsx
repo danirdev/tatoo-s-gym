@@ -47,14 +47,14 @@ const Navbar = ({activePage, setActivePage}) =>
                                     key={link.id}
                                     onClick={() => setActivePage(link.id)}
                                     className={`font-bold uppercase text-sm tracking-wide transition-colors py-2 border-b-2 ${activePage === link.id
-                                            ? 'text-[#FFD700] border-[#FFD700]'
-                                            : 'text-gray-300 border-transparent hover:text-white hover:border-gray-500'
+                                        ? 'text-[#FFD700] border-[#FFD700]'
+                                        : 'text-gray-300 border-transparent hover:text-white hover:border-gray-500'
                                         }`}
                                 >
                                     {link.label}
                                 </button>
                             ))}
-                            <Button variant="primary" className="!py-2 !px-4 !text-xs ml-4" href="https://wa.me/5493881234567">
+                            <Button variant="primary" className="!py-2 !px-4 !text-xs ml-4" href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}?text=${encodeURIComponent(import.meta.env.VITE_WHATSAPP_DEFAULT_MESSAGE)}`}>
                                 <MessageCircle size={16} /> WhatsApp
                             </Button>
                         </div>
@@ -78,15 +78,15 @@ const Navbar = ({activePage, setActivePage}) =>
                                 key={link.id}
                                 onClick={() => setActivePage(link.id)}
                                 className={`block w-full text-left px-3 py-4 text-base font-bold border-l-4 ${activePage === link.id
-                                        ? 'border-[#FFD700] bg-white/5 text-[#FFD700]'
-                                        : 'border-transparent text-gray-300 hover:bg-white/5 hover:text-white'
+                                    ? 'border-[#FFD700] bg-white/5 text-[#FFD700]'
+                                    : 'border-transparent text-gray-300 hover:bg-white/5 hover:text-white'
                                     }`}
                             >
                                 {link.label}
                             </button>
                         ))}
                         <div className="pt-4">
-                            <Button href="https://wa.me/5493881234567" className="w-full">
+                            <Button href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}?text=${encodeURIComponent(import.meta.env.VITE_WHATSAPP_DEFAULT_MESSAGE)}`} className="w-full">
                                 Contactar por WhatsApp
                             </Button>
                         </div>

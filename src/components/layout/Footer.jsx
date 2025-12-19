@@ -42,7 +42,7 @@ const Footer = ({setActivePage}) =>
                             <a href="https://www.instagram.com/tattos_gym/" target="_blank" rel="noopener noreferrer" className="bg-neutral-800 p-3 rounded-lg text-white hover:bg-[#E1306C] hover:text-white transition-all">
                                 <Instagram size={24} />
                             </a>
-                            <a href="https://wa.me/5493881234567" target="_blank" rel="noopener noreferrer" className="bg-neutral-800 p-3 rounded-lg text-white hover:bg-[#25D366] hover:text-white transition-all">
+                            <a href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}?text=${encodeURIComponent(import.meta.env.VITE_WHATSAPP_DEFAULT_MESSAGE)}`} target="_blank" rel="noopener noreferrer" className="bg-neutral-800 p-3 rounded-lg text-white hover:bg-[#25D366] hover:text-white transition-all">
                                 <MessageCircle size={24} />
                             </a>
                         </div>
