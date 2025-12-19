@@ -31,11 +31,11 @@ const ContactPage = () => (
                         </div>
                         <div>
                             <h4 className="text-white font-bold uppercase mb-1">Horarios</h4>
-                            <div className="text-gray-400 text-sm space-y-1">
+                            <div className="text-gray-400 text-sm space-y-3">
                                 {contactInfo.hours.map((item, idx) => (
-                                    <div key={idx} className="flex justify-between w-48">
-                                        <span>{item.label}:</span>
-                                        <span className={item.active ? "text-white" : "text-red-400"}>{item.time}</span>
+                                    <div key={idx} className="flex flex-col border-b border-white/10 pb-2 last:border-0 last:pb-0">
+                                        <span className="text-[#FFD700] font-bold text-xs uppercase mb-1">{item.label}</span>
+                                        <span className={item.active ? "text-white font-mono" : "text-red-400 font-bold"}>{item.time}</span>
                                     </div>
                                 ))}
                             </div>
@@ -59,7 +59,7 @@ const ContactPage = () => (
                 {/* Map */}
                 <div className="lg:col-span-2 h-[500px] bg-neutral-800 rounded-2xl overflow-hidden border border-neutral-700 relative group">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1544.7578713567793!2d-65.29742563309998!3d-24.18663806141315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941b0f5555555555%3A0x123456789!2sJujuy!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3633.7553775690994!2d-65.14387769999999!3d-24.3898118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941bad9278924d11%3A0x5367fc8b51b60faa!2sTatto&#39;s%20gym!5e0!3m2!1ses-419!2sar!4v1766166278839!5m2!1ses-419!2sar"
                         width="100%"
                         height="100%"
                         style={{border: 0, filter: 'grayscale(100%) invert(92%) contrast(83%)'}}

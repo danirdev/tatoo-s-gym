@@ -3,8 +3,9 @@ export const contactInfo = {
     mapLink: "https://maps.app.goo.gl/Ka7gzCmSXZfUFPPp7",
     whatsapp: "5493881234567",
     hours: [
-        {label: "Lunes - Viernes", time: "07:00 - 23:00", active: true},
-        {label: "Sábados", time: "09:00 - 20:00", active: true},
-        {label: "Domingos", time: "Cerrado", active: false}
+        {label: "Lunes - Viernes", time: "07:00 - 12:00 y 14:00 - 23:00", active: true},
+        {label: "Sábados", time: "09:00 - 12:00 y 15:00 - 18:00", active: true},
+        {label: "Domingos", time: "Cerrado", active: false},
+        {label: "Turnos (L-V)", time: "20:00 - 21:30 y 21:30 - 23:00", active: true}
     ]
 };
