@@ -1,8 +1,9 @@
 import React from 'react';
-import {motion} from 'framer-motion'; // Importar framer-motion
+import {motion} from 'framer-motion';
 import Button from '../components/ui/Button';
+import SectionTitle from '../components/ui/SectionTitle'; // Asegúrate de importar esto
 import {features} from '../data/features';
-import BMICalculator from '../components/features/BMICalculator_temp'; // Importar Calculadora
+import BMICalculator from '../components/features/BMICalculator_temp';
 
 const HomePage = ({navigate}) => (
     <div className="overflow-x-hidden">
@@ -87,7 +88,52 @@ const HomePage = ({navigate}) => (
             </div>
         </section>
 
-        {/* CALCULADORA IMC (NUEVA SECCIÓN) */}
+        {/* INSTAGRAM REEL SECTION (NUEVO) */}
+        <section className="py-20 bg-black overflow-hidden relative">
+            <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
+                <motion.div
+                    initial={{opacity: 0, y: 30}}
+                    whileInView={{opacity: 1, y: 0}}
+                    viewport={{once: true}}
+                    transition={{duration: 0.6}}
+                >
+                    <SectionTitle title="Vive la Experiencia" subtitle="Motivación Pura" />
+                </motion.div>
+
+                <div className="flex justify-center mt-12">
+                    {/* Contenedor del video estilo 'Móvil' */}
+                    <motion.div
+                        initial={{opacity: 0, scale: 0.9}}
+                        whileInView={{opacity: 1, scale: 1}}
+                        viewport={{once: true}}
+                        transition={{delay: 0.2, duration: 0.6}}
+                        className="relative w-full max-w-[350px] h-[620px] rounded-[2rem] overflow-hidden border-4 border-neutral-800 shadow-2xl shadow-yellow-500/10 bg-neutral-900"
+                    >
+                        {/* El iframe de Instagram */}
+                        <iframe
+                            src="https://www.instagram.com/reel/DKGUtvqxBc-/embed"
+                            className="w-full h-full object-cover"
+                            frameBorder="0"
+                            scrolling="no"
+                            allowTransparency="true"
+                            allow="encrypted-media; picture-in-picture"
+                            title="Instagram Reel Tatto's Gym"
+                        ></iframe>
+                    </motion.div>
+                </div>
+
+                <div className="mt-8">
+                    <a href="https://www.instagram.com/tattos_gym/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#FFD700] transition-colors text-sm uppercase tracking-widest font-bold">
+                        Ver más en @tattos_gym
+                    </a>
+                </div>
+            </div>
+
+            {/* Decoración de fondo */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FFD700]/5 rounded-full blur-[100px] pointer-events-none"></div>
+        </section>
+
+        {/* CALCULADORA IMC */}
         <BMICalculator />
     </div>
 );
