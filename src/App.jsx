@@ -1,36 +1,49 @@
-import {useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, {useState} from 'react';
+import {MessageCircle} from 'lucide-react';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import PlansPage from './pages/PlansPage';
+import GalleryPage from './pages/GalleryPage';
+import ReviewsPage from './pages/ReviewsPage';
+import ContactPage from './pages/ContactPage';
 
 function App ()
 {
-  const [count, setCount] = useState(0)
+  const [activePage, setActivePage] = useState('home');
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className="text-3xl font-bold underline">Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="bg-neutral-950 min-h-screen text-white font-sans selection:bg-[#FFD700] selection:text-black">
+
+      {/* NAVBAR */}
+      <Navbar activePage={activePage} setActivePage={setActivePage} />
+
+      {/* PAGE CONTENT */}
+      <main>
+        {activePage === 'home' && <HomePage navigate={setActivePage} />}
+        {activePage === 'about' && <AboutPage />}
+        {activePage === 'plans' && <PlansPage />}
+        {activePage === 'gallery' && <GalleryPage />}
+        {activePage === 'reviews' && <ReviewsPage />}
+        {activePage === 'contact' && <ContactPage />}
+      </main>
+
+      {/* WHATSAPP FLOATING BUTTON */}
+      <a
+        href="https://wa.me/5493881234567"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#128C7E] transition-all transform hover:scale-110 flex items-center justify-center cursor-pointer"
+        aria-label="Contactar por WhatsApp"
+      >
+        <MessageCircle size={32} fill="white" className="text-white" />
+      </a>
+
+      {/* FOOTER */}
+      <Footer setActivePage={setActivePage} />
+    </div>
+  );
 }
 
-export default App
+export default App;
